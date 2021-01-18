@@ -5,6 +5,10 @@ import {FooterComponent} from './components/Footer/footer.component';
 import {HeaderComponent} from './components/Header/header.component';
 import {NavBarComponent} from './components/NavBar/navBar.component';
 import {SearchComponent} from './components/Search/search.component';
+import {loginComponent} from './components/Buttons/Login/login.component';
+import {popupComponent} from './components/Buttons/Popup/popup.component';
+import {BasketComponent} from './components/Basket/basket.component';
+import {PopupComponent} from './components/Popup/popup.component';
 
 @NgModule({
   declarations: [
@@ -12,7 +16,11 @@ import {SearchComponent} from './components/Search/search.component';
     FooterComponent,
     HeaderComponent,
     NavBarComponent,
-    SearchComponent
+    SearchComponent,
+    loginComponent,
+    popupComponent,
+    BasketComponent,
+    PopupComponent
   ],
   imports: [
     BrowserModule

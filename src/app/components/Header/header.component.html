@@ -11,38 +11,13 @@
       <line x1="16.6" y1="36.0001" x2="16.6" y2="9.15527e-05" stroke="#FF0000" stroke-width="4"/>
     </svg>
   </div>
- <app-navbar></app-navbar>
+  <app-navbar></app-navbar>
   <div class="header__search">
     <app-search></app-search>
   </div>
-  <div class="header__basket">
-    basket
-  </div>
-  <template id="popup">
-    <div class="b-popup">
-      <div class="b-popup-content">
-        <div class="popup-container">
-          <div class="popup-container__top">
-            <div class="name ">name</div>
-            <div class="price ">price</div>
-            <div class="count ">count</div>
-          </div>
-          <div class="popup-container__product"></div>
-        </div>
-        <button class="button__popup">
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12.59 0L7 5.59L1.41 0L0 1.41L5.59 7L0 12.59L1.41 14L7 8.41L12.59 14L14 12.59L8.41 7L14 1.41L12.59 0Z"
-                  fill="#FFFDFD"/>
-          </svg>
-        </button>
-      </div>
-    </div>
-  </template>
+  <app-basket></app-basket>
+  <app-popup></app-popup>
   <div class="header__login">
-    <div class="login">
-      <div class="login__button">
-        sign in
-      </div>
-    </div>
+    <app-login></app-login>
   </div>
 </header>
