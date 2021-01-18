@@ -1,7 +1,42 @@
-.header__basket {
+.basketBtn{
+  font-family: 'Fraunces', serif;
   cursor: pointer;
+  color: black;
+  font-weight: bold;
+  margin-top: 200px;
+  margin-right: 20px;
   display: flex;
+  position: absolute;
   align-items: center;
-  background-color: green;
+  justify-content: center;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 150px;
+  height: 150px;
+  border-radius: 50px;
+  background: #e0e0e0;
+  box-shadow:  20px 20px 60px #bebebe,
+    -20px -20px 60px #ffffff;
+  &:hover{
+    background: #e0e0e0;
+    box-shadow: inset 20px 20px 60px #bebebe,
+      inset -20px -20px 60px #ffffff;
+  }
 }
-
+.translateBtn {
+  animation: translateObject 1s,ease-in;
+  animation-fill-mode: forwards;
+}
+@keyframes translateObject{
+  0% {
+    margin-right: 20px;
+    width: 150px;
+    height: 150px;
+  }
+  50% {
+    width: 100px;
+    height: 100px;
+    margin-right: 210px;
+  }
+}

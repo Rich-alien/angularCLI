@@ -8,7 +8,14 @@ import {Component} from '@angular/core';
 export class BasketComponent {
   showPopup(): void {
     const popup: HTMLElement = document.getElementById('popup');
-    console.log(popup);
-    popup.style.display = 'block';
+    popup.classList.add('slowlyOpenPopup');
+    const buttonBasket: HTMLElement = document.querySelector('.basketBtn');
+    buttonBasket.classList.add('translateBtn');
+    const buttonCloseBasket: HTMLElement = document.querySelector('.closeBtn');
+    setInterval(() => {buttonCloseBasket.style.display = 'block'; }, 1000 );
+    setInterval(() => {buttonCloseBasket.classList.add('shroudElement'); }, 1020 );
+  }
+  closePopup(): void{
+    console.log('fuck u');
   }
 }
