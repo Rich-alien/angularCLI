@@ -9,6 +9,7 @@ import {loginComponent} from './components/Buttons/Login/login.component';
 import {popupComponent} from './components/Buttons/Popup/popup.component';
 import {BasketComponent} from './components/Basket/basket.component';
 import {PopupComponent} from './components/Popup/popup.component';
+import {productComponent} from './components/Product/product.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import {PopupComponent} from './components/Popup/popup.component';
     loginComponent,
     popupComponent,
     BasketComponent,
-    PopupComponent
+    PopupComponent,
+    productComponent
   ],
   imports: [
     BrowserModule
