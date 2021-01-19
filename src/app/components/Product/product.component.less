@@ -1,55 +1,35 @@
 .product{
-  &-list {
-    display: flex;
-    margin-top: 60px;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-  }
-  &-card {
-    border: 5px solid white;
-    border-radius: 15px;
-    margin: 10px;
-    padding: 10px;
-    width: auto;
-
-    &__image {
-      margin: 30px;
-      border-bottom: 5px solid white;
-
-      &:hover {
-        border-bottom-color: red;
-      }
-    }
-
-    &__info-name {
-      margin-top: 10px;
-    }
-
-    &__info-country {
-      margin-top: 10px;
-    }
-
-    &__info-year {
-      margin-top: 10px;
-    }
-
-    &__info-blade {
-      margin-top: 10px;
-    }
-
-    &__info-price {
-      margin-top: 10px;
-    }
-
-    &__button {
-      margin-top: 10px;
+  &-card{
+    text-align: center;
+    border-radius: 50px;
+    background: #e0e0e0;
+    box-shadow: inset 20px 20px 60px #bebebe,
+      inset -20px -20px 60px #ffffff;
+    &__button{
       cursor: pointer;
-      border-radius: 10px;
-      padding: 5px;
-      background-color: green;
+      width: 100px;
+      height: 50px;
+      border: none;
+      border-radius: 89px;
+      background: #b7dcbf;
+      box-shadow:  20px 20px 39px #49584c,
+        -20px -20px 39px #ffffff;
+    }
+    &__info{
+
+      &-name{
+        //border: 1px solid black;
+        display: flex;
+        align-items: center;
+      }
+      &-description{
+        display: flex;
+        align-items: center;
+      }
+      &-price{
+        display: flex;
+        align-items: center;
+      }
     }
   }
 }
-
-
