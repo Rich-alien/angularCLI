@@ -1,9 +1,11 @@
 <app-header></app-header>
 <main class="main">
   <div class="product-list">
-      <app-product class="product-container"></app-product>
+      <app-product [idProduct]="idNumber" class="product-container"></app-product>
   </div>
   <div class="cart"></div>
+  <button (click)="viewNuber()" class="black">{{idNumber}}</button>
+
 </main>
 <app-footer></app-footer>
 

@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import {products} from './mocks/product.mocks';
 
 @Component({
   selector: 'app-root',
@@ -8,4 +7,8 @@ import {products} from './mocks/product.mocks';
 })
 export class AppComponent {
   title = 'angularCLI';
+  idNumber: number;
+  public viewNuber(): void{
+    console.log(this.idNumber);
+  }
 }

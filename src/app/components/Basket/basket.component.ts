@@ -16,10 +16,5 @@ export class BasketComponent {
     setTimeout(() => {
       buttonCloseBasket.classList.add('shroudElement');
     }, 50);
-
-  }
-
-  closePopup(): void {
-    console.log('z');
   }
 }

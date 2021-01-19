@@ -1,5 +1,6 @@
-import {Component} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {products} from '../../mocks/product.mocks';
+import {Product} from '../../model/product.model';
 
 @Component({
   selector: 'app-product',
@@ -7,21 +8,22 @@ import {products} from '../../mocks/product.mocks';
   styleUrls: ['./product.component.less'],
 
 })
+
 // tslint:disable-next-line:class-name
 export class productComponent {
-  public idProduct: number;
+  @Input()  idProduct: number;
 
-  // tslint:disable-next-line:typedef
-  public getProduct() {
+  public getProduct(): Product[] {
     return products;
   }
 
-  public setIndex(id: number) {
+  public addToCart(id: number): void {
     this.idProduct = id;
     console.log(this.idProduct);
   }
-  public getIndex(){
+
+  public getID(): number {
     return this.idProduct;
   }
-
 }
+
