@@ -12,16 +12,14 @@ export class BasketComponent {
     const buttonBasket: HTMLElement = document.querySelector('.basketBtn');
     buttonBasket.classList.add('translateBtn');
     const buttonCloseBasket: HTMLElement = document.querySelector('.closeBtn');
-    setInterval(() => {
-      buttonCloseBasket.style.display = 'block';
-    }, 1000);
-    setInterval(() => {
+    buttonCloseBasket.style.display = 'block';
+    setTimeout(() => {
       buttonCloseBasket.classList.add('shroudElement');
-    }, 1020);
+    }, 50);
 
   }
 
   closePopup(): void {
-    console.log('fuck u');
+    console.log('z');
   }
 }
