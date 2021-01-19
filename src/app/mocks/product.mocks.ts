@@ -25,4 +25,7 @@ export const products: Product[] = [
   {
     id: 8, name: 'Kayak8', description: 'A boat for one person', price: 1075
   },
+  {
+    id: 9, name: 'Kayak9', description: 'A boat for one person', price: 1275
+  },
 ];
