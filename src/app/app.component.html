@@ -1,10 +1,10 @@
 <app-header></app-header>
 <main class="main">
   <div class="product-list">
-      <app-product [idProduct]="idNumber" class="product-container"></app-product>
+      <app-product (OnIndexPicked)="doSomething($event)" class="product-container"></app-product>
   </div>
   <div class="cart"></div>
-  <button (click)="viewNuber()" class="black">{{idNumber}}</button>
+  <button  class="black">{{indexProduct}}</button>
 
 </main>
 <app-footer></app-footer>

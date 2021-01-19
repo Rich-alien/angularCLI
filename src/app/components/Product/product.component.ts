@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, EventEmitter, Output} from '@angular/core';
 import {products} from '../../mocks/product.mocks';
 import {Product} from '../../model/product.model';
 
@@ -9,21 +9,14 @@ import {Product} from '../../model/product.model';
 
 })
 
-// tslint:disable-next-line:class-name
-export class productComponent {
-  @Input()  idProduct: number;
 
+export class ProductComponent {
+  @Output() OnIndexPicked: EventEmitter<number> = new EventEmitter<number>();
+    public pickIndex(date: number): void {
+    this.OnIndexPicked.emit(date);
+  }
   public getProduct(): Product[] {
     return products;
-  }
-
-  public addToCart(id: number): void {
-    this.idProduct = id;
-    console.log(this.idProduct);
-  }
-
-  public getID(): number {
-    return this.idProduct;
   }
 }
 

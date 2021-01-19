@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,8 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angularCLI';
-  idNumber: number;
-  public viewNuber(): void{
-    console.log(this.idNumber);
+  @Input() indexProduct: number;
+  public doSomething(date: number): void {
+    console.log('Picked date: ', date);
   }
+
 }
