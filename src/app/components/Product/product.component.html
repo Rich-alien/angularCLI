@@ -1,14 +1,17 @@
+<ng-container *ngFor="let product of getProduct()">
+  <!--  <div class="product-card__image-block">-->
+  <!--    <img class="product-card__image" src="./assets/images/katana312.jpg" alt="image_katana">-->
+  <!--  </div>-->
+  <div class="product-card">
+    <div class="product-card__info">
+      <div class="product-card__info-name">name <p class="product-card__name">{{product.name}}</p></div>
+      <div class="product-card__info-description">description <p
+        class="product-card__description">{{product.description}}</p></div>
+      <div class="product-card__info-price">price <p class="product-card__price">{{product.price}}$</p></div>
+    </div>
+    <div class="product-card__more-info">
+      <button (click)="pickIndex(product.id)" class="product-card__button">buy</button>
+    </div>
+  </div>
 
-<div *ngFor="let product of getProduct()" class="product-card">
-<!--  <div class="product-card__image-block">-->
-<!--    <img class="product-card__image" src="./assets/images/katana312.jpg" alt="image_katana">-->
-<!--  </div>-->
-  <div class="product-card__info">
-    <div class="product-card__info-name">name <p class="product-card__name">{{product.name}}</p></div>
-    <div class="product-card__info-description">description <p class="product-card__description">{{product.description}}</p></div>
-    <div class="product-card__info-price">price <p class="product-card__price">{{product.price}}$</p></div>
-  </div>
-  <div class="product-card__more-info">
-    <button (click)="pickIndex(product.id)" class="product-card__button">buy</button>
-  </div>
-</div>
+</ng-container>

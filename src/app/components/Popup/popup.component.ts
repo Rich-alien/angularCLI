@@ -12,9 +12,9 @@ export class PopupComponent {
   @Input() index: number;
   cart = [];
   public getCart(): Product[] {
-    let product = products.filter(item => item.id === this.index);
-    this.cart.push(product);
-    console.log(product);
+    // let product = products.filter(item => item.id === this.index);
+    // this.cart.push(product);
+    // console.log(product);
     return ;
   }
 }
