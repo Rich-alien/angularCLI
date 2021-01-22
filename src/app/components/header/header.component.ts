@@ -7,5 +7,5 @@ import {Component, Input} from '@angular/core';
 
 })
 export class HeaderComponent {
-  @Input() index: number;
+  @Input() data: Map<number, string>;
 }

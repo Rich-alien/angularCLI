@@ -7,10 +7,6 @@
     </svg>
   </div>
   <div>
-    <div *ngFor="let item of getCart()">
-      <div class="name ">{{item.name}}</div>
-      <div class="price ">{{item.price}}</div>
-    </div>
-
+  <app-product-line [data]="data"></app-product-line>
   </div>
 </template>
