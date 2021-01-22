@@ -8,9 +8,9 @@ import {Component, Input} from '@angular/core';
 export class AppComponent {
   title = 'angularCLI';
   @Input() indexProduct: number;
-  index: number;
-  public getIndex(date: number): void {
-    this.index = date;
+  data: Map<number, string>;
+  public getIndex(date: Map<number, string>): void {
+    this.data = date;
   }
 
 }
