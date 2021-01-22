@@ -2,14 +2,15 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import {FooterComponent} from './components/footer/footer.component';
-import {HeaderComponent} from './components/Header/header.component';
-import {NavBarComponent} from './components/NavBar/navBar.component';
-import {SearchComponent} from './components/Search/search.component';
-import {loginComponent} from './components/Buttons/login/login.component';
-import {popupComponent} from './components/Buttons/popup/popup.component';
+import {HeaderComponent} from './components/header/header.component';
+import {NavBarComponent} from './components/navBar/navBar.component';
+import {SearchComponent} from './components/search/search.component';
+import {loginComponent} from './components/buttons/login/login.component';
+import {popupComponent} from './components/buttons/popup/popup.component';
 import {BasketComponent} from './components/basket/basket.component';
-import {PopupComponent} from './components/Popup/popup.component';
-import {ProductComponent} from './components/Product/product.component';
+import {PopupComponent} from './components/popup/popup.component';
+import {ProductComponent} from './components/product/product.component';
+import {ProductLineComponent} from './components/productLine/productLine.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import {ProductComponent} from './components/Product/product.component';
     popupComponent,
     BasketComponent,
     PopupComponent,
-    ProductComponent
+    ProductComponent,
+    ProductLineComponent
   ],
   imports: [
     BrowserModule
