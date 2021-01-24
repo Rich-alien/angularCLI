@@ -18,6 +18,7 @@ export class CounterComponent {
     this.cartServices.cart.forEach(item => {
       if (item.id === id) {
         item.count++;
+        item.totalPrice = item.price * item.count;
       }
     });
   }
@@ -26,6 +27,7 @@ export class CounterComponent {
     this.cartServices.cart.forEach(item => {
       if (item.id === id && item.count > 1) {
         item.count--;
+        item.totalPrice = item.price * item.count;
       }
     });
   }
