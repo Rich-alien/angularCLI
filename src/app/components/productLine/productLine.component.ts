@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {CartService} from '../../../service/cart.service';
+import {Product} from '../../model/product.model';
 
 @Component({
   selector: 'app-product-line',
@@ -10,16 +11,9 @@ export class ProductLineComponent {
   constructor(private cartServices: CartService) {
   }
 
-  cartData: IterableIterator<number>;
+  cartData: IterableIterator<Product[]>;
 
-  getData(): number[] {
-    this.cartData = this.cartServices.getCartInstance().values();
-    return [...this.cartData];
-  }
-  incrementCount(index: number): void{
-    this.cartServices.incrementCount(index - 1);
-  }
-  decrementCount(index: number): void{
-    this.cartServices.decrementCount(index - 1);
+  public getData(): Product[] {
+    return this.cartServices.getCartInstance();
   }
 }
