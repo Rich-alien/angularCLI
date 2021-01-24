@@ -1,5 +1,5 @@
-import {Component, Input} from '@angular/core';
-import {Product} from '../../model/product.model';
+import {Component} from '@angular/core';
+import {CartService} from '../../../service/cart.service';
 
 @Component({
   selector: 'app-product-line',
@@ -7,16 +7,13 @@ import {Product} from '../../model/product.model';
   styleUrls: ['./productLine.component.less']
 })
 export class ProductLineComponent {
-  @Input() data: Map<number, string>;
+  constructor(private cartServices: CartService) {
+  }
 
-  // tslint:disable-next-line:typedef
-  getCart(){
-    if (this.data != undefined){
-      this.data.forEach(item => {
-        console.log(item);
-        return item;
-      });
+  cartData: IterableIterator<number>;
 
-    }
+  getData(): number[] {
+    this.cartData = this.cartServices.getCartInstance().values();
+    return [...this.cartData];
   }
 }
