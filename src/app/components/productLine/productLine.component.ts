@@ -10,7 +10,6 @@ import {Product} from '../../model/product.model';
 export class ProductLineComponent {
   constructor(private cartServices: CartService) {
   }
-
   cartData: IterableIterator<Product[]>;
 
   public getData(): Product[] {

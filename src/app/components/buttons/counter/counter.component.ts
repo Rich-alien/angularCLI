@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {CartService} from '../../../../service/cart.service';
 
 
@@ -8,23 +8,25 @@ import {CartService} from '../../../../service/cart.service';
   styleUrls: ['./counter.component.less']
 })
 export class CounterComponent {
+  @Input() count: number;
+  @Input() id: number;
+
   constructor(private cartServices: CartService) {
   }
-  // // incrementCount(index: number): void {
-  // //   this.cart.get(index).count++;
-  // //   this.cart.get(index).totalPrice += this.cart.get(index).price;
-  // // }
-  // //
-  // // decrementCount(index: number): void {
-  // //   if (this.cart.get(index).count > 1) {
-  // //     this.cart.get(index).count--;
-  // //     this.cart.get(index).totalPrice -= this.cart.get(index).price;
-  // //   }
-  // // }
-  // incrementCount(index: number): void{
-  //   this.cartServices.incrementCount(index - 1) ;
-  // }
-  // decrementCount(index: number): void{
-  //   this.cartServices.decrementCount(index - 1);
-  // }
+
+  incrementCount(id: number): void {
+    this.cartServices.cart.forEach(item => {
+      if (item.id === id) {
+        item.count++;
+      }
+    });
+  }
+
+  decrementCount(id: number): void {
+    this.cartServices.cart.forEach(item => {
+      if (item.id === id && item.count > 1) {
+        item.count--;
+      }
+    });
+  }
 }

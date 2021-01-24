@@ -2,9 +2,6 @@
   <div class="product-line__name ">{{item.name}}</div>
   <div class="price ">{{item.totalPrice}}</div>
   <div>
-    <app-counter>
-      <!-- тут вывод count -->
-    </app-counter>
+    <app-counter [count]="item.count" [id]="item.id"></app-counter>
   </div>
-
 </div>
