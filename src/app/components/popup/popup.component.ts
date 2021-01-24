@@ -1,6 +1,7 @@
-import {Component, Input, Output} from '@angular/core';
+import {Component, Input, OnInit, Output} from '@angular/core';
 import {Product} from '../../model/product.model';
 import {products} from '../../mocks/product.mocks';
+import {CartService} from '../../../service/cart.service';
 
 @Component({
   selector: 'app-popup',
@@ -8,6 +9,6 @@ import {products} from '../../mocks/product.mocks';
   styleUrls: ['./popup.component.less'],
 
 })
-export class PopupComponent {
-  @Input() data: Map<number, string>;
+export class PopupComponent  {
+
 }
