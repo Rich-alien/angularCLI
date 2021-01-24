@@ -1,38 +1,47 @@
 import {Injectable} from '@angular/core';
 import {products} from '../app/mocks/product.mocks';
+import {Product} from '../app/model/product.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CartService {
-  cart = new Map();
+  cart: Product[] = [];
   cartCount = 0;
 
   constructor() {
   }
 
   setCartInstance = (id: number) => {
-    if (!this.cart.has(id)) {
+    if (this.cartCount === 0) {
       this.cartCount++;
-      this.cart.set(id, products[id]);
+      this.cart.push(products[id]);
     } else {
-      this.cart.get(id).count++;
+      if (this.hasCollision(id)) {
+        this.cartCount++;
+        this.cart.push(products[id]);
+      } else {
+        this.cart.forEach(item => {
+          if (item.id === id) {
+            item.count++;
+          }
+        });
+      }
     }
+    console.log(this.cart);
+  }
+  hasCollision(id: number): boolean {
+    let HasId = true;
+    this.cart.forEach(item => {
+      if (item.id === id) {
+        HasId = false;
+      }
+    });
+    return HasId;
   }
 
-  getCartInstance(): Map<string, number> {
+  getCartInstance(): Product[] {
     return this.cart;
   }
 
-  incrementCount(index: number): void {
-    this.cart.get(index).count++;
-    this.cart.get(index).totalPrice += this.cart.get(index).price;
-  }
-
-  decrementCount(index: number): void {
-    if (this.cart.get(index).count > 1) {
-      this.cart.get(index).count--;
-      this.cart.get(index).totalPrice -= this.cart.get(index).price;
-    }
-  }
 }
