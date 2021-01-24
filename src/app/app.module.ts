@@ -13,21 +13,23 @@ import {ProductComponent} from './components/product/product.component';
 import {ProductLineComponent} from './components/productLine/productLine.component';
 import {ProductsService} from '../service/products.service';
 import {CartService} from '../service/cart.service';
+import {CounterComponent} from './components/buttons/counter/counter.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    FooterComponent,
-    HeaderComponent,
-    NavBarComponent,
-    SearchComponent,
-    loginComponent,
-    popupComponent,
-    BasketComponent,
-    PopupComponent,
-    ProductComponent,
-    ProductLineComponent
-  ],
+    declarations: [
+        AppComponent,
+        FooterComponent,
+        HeaderComponent,
+        NavBarComponent,
+        SearchComponent,
+        loginComponent,
+        popupComponent,
+        BasketComponent,
+        PopupComponent,
+        ProductComponent,
+        ProductLineComponent,
+        CounterComponent
+    ],
   imports: [
     BrowserModule,
   ],
