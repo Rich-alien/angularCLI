@@ -11,6 +11,8 @@ import {BasketComponent} from './components/basket/basket.component';
 import {PopupComponent} from './components/popup/popup.component';
 import {ProductComponent} from './components/product/product.component';
 import {ProductLineComponent} from './components/productLine/productLine.component';
+import {ProductsService} from '../service/products.service';
+import {CartService} from '../service/cart.service';
 
 @NgModule({
   declarations: [
@@ -27,9 +29,9 @@ import {ProductLineComponent} from './components/productLine/productLine.compone
     ProductLineComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
   ],
-  providers: [],
+  providers: [ProductsService, CartService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
