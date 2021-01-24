@@ -1,6 +1,8 @@
-import {Component, EventEmitter, Output} from '@angular/core';
-import {products} from '../../mocks/product.mocks';
+import {Component, OnInit} from '@angular/core';
+
+import {ProductsService} from '../../../service/products.service';
 import {Product} from '../../model/product.model';
+import {CartService} from '../../../service/cart.service';
 
 @Component({
   selector: 'app-product',
@@ -10,27 +12,18 @@ import {Product} from '../../model/product.model';
 })
 
 
-export class ProductComponent {
-  @Output() OnIndexPicked: EventEmitter<Map<number, string>> = new EventEmitter<Map<number, string>>();
+export class ProductComponent implements OnInit{
   cart = new Map();
-
+  productList: Product[];
+  constructor(private productService: ProductsService, private cartServices: CartService) {
+  }
   public addToCart(id: number): void {
-    this.importToCart(id);
-    console.log(this.cart);
-    this.OnIndexPicked.emit(this.cart);
+    this.cartServices.setCartInstance(id);
   }
 
-  public getProduct(): Product[] {
-    return products;
+  ngOnInit(): void {
+   this.productList = this.productService.getProducts();
   }
 
-
-  importToCart = (id: number) => {
-    if (!this.cart.has(id)) {
-      this.cart.set(id, products[id]);
-    } else {
-      this.cart.get(id).count++;
-    }
-  }
 }
 
