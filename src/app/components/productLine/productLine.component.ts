@@ -16,4 +16,10 @@ export class ProductLineComponent {
     this.cartData = this.cartServices.getCartInstance().values();
     return [...this.cartData];
   }
+  incrementCount(index: number): void{
+    this.cartServices.incrementCount(index - 1);
+  }
+  decrementCount(index: number): void{
+    this.cartServices.decrementCount(index - 1);
+  }
 }
