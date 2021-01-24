@@ -11,11 +11,7 @@ export class CartService {
   constructor() {
   }
 
-  setCartInstance(index: number): void {
-    this.importToCart(index);
-  }
-
-  importToCart = (id: number) => {
+  setCartInstance = (id: number) => {
     if (!this.cart.has(id)) {
       this.cartCount++;
       this.cart.set(id, products[id]);
