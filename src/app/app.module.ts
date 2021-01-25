@@ -14,6 +14,13 @@ import {ProductLineComponent} from './components/productLine/productLine.compone
 import {ProductsService} from '../service/products.service';
 import {CartService} from '../service/cart.service';
 import {CounterComponent} from './components/buttons/counter/counter.component';
+import {UserProfileComponent} from './components/user-profile/user-profile.component';
+import {ProductDescriptionComponent} from './components/productDescription/productDescription.component';
+import {PageNotFoundComponent} from './components/page-not-found/page-not-found.component';
+import {RouterModule} from '@angular/router';
+import {AppRoutingModule} from './app-routing.module';
+import {CommonModule} from '@angular/common';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
     declarations: [
@@ -28,10 +35,16 @@ import {CounterComponent} from './components/buttons/counter/counter.component';
         PopupComponent,
         ProductComponent,
         ProductLineComponent,
-        CounterComponent
+        CounterComponent,
+        UserProfileComponent,
+        ProductDescriptionComponent,
+        PageNotFoundComponent,
     ],
   imports: [
     BrowserModule,
+    CommonModule,
+    FormsModule,
+    AppRoutingModule
   ],
   providers: [ProductsService, CartService],
   bootstrap: [AppComponent]
