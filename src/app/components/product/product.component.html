@@ -1,4 +1,5 @@
-<ng-container *ngFor="let product of productList">
+
+<div *ngFor="let product of productList">
   <div class="product-card">
     <div class="product-card__info">
       <div class="product-card__info-name">name <p class="product-card__name">{{product.name}}</p></div>
@@ -10,4 +11,4 @@
       <button (click)="addToCart(product.id)" class="product-card__button">buy</button>
     </div>
   </div>
-</ng-container>
+</div>
