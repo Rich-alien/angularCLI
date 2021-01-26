@@ -28,7 +28,6 @@ export class CartService {
         });
       }
     }
-    console.log(this.cart);
   }
   hasCollision(id: number): boolean {
     let HasId = true;
