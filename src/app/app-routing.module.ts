@@ -1,7 +1,7 @@
 import {RouterModule, Routes} from '@angular/router';
 import {UserProfileComponent} from './components/user-profile/user-profile.component';
 import {ProductComponent} from './components/product/product.component';
-import {ProductDescriptionComponent} from './components/productDescription/productDescription.component';
+import {ProductDescriptionComponent} from './components/product-description/product-description.component';
 import {PageNotFoundComponent} from './components/page-not-found/page-not-found.component';
 import {NgModule} from '@angular/core';
 import {LocalStorageGuard} from '../guards/local-storage.guard';

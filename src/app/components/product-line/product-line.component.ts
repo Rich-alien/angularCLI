@@ -4,8 +4,8 @@ import {Product} from '../../model/product.model';
 
 @Component({
   selector: 'app-product-line',
-  templateUrl: './productLine.component.html',
-  styleUrls: ['./productLine.component.less']
+  templateUrl: './product-line.component.html',
+  styleUrls: ['./product-line.component.less']
 })
 export class ProductLineComponent {
   constructor(private cartServices: CartService) {

@@ -6,8 +6,8 @@ import {products} from '../../mocks/product.mocks';
 
 @Component({
   selector: 'app-product-description',
-  templateUrl: './productDescription.component.html',
-  styleUrls: ['./productDescription.component.less'],
+  templateUrl: './product-description.component.html',
+  styleUrls: ['./product-description.component.less'],
 
 })
 
