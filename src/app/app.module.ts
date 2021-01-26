@@ -17,10 +17,10 @@ import {CounterComponent} from './components/buttons/counter/counter.component';
 import {UserProfileComponent} from './components/user-profile/user-profile.component';
 import {ProductDescriptionComponent} from './components/productDescription/productDescription.component';
 import {PageNotFoundComponent} from './components/page-not-found/page-not-found.component';
-import {RouterModule} from '@angular/router';
 import {AppRoutingModule} from './app-routing.module';
 import {CommonModule} from '@angular/common';
 import {FormsModule} from '@angular/forms';
+import {RegistrationComponent} from './components/registration/registration.component';
 
 @NgModule({
     declarations: [
@@ -39,6 +39,7 @@ import {FormsModule} from '@angular/forms';
         UserProfileComponent,
         ProductDescriptionComponent,
         PageNotFoundComponent,
+        RegistrationComponent
     ],
   imports: [
     BrowserModule,

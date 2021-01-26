@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -7,5 +7,9 @@ import {Component, Input} from '@angular/core';
 
 })
 export class HeaderComponent {
+  authorization: string = localStorage.getItem('loggedIn');
 
+  click(): void {
+    console.log(this.authorization);
+  }
 }

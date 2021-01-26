@@ -12,5 +12,4 @@ export class AppComponent {
   public getIndex(date: Map<number, string>): void {
     this.data = date;
   }
-
 }

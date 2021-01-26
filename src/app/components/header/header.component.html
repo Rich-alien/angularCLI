@@ -15,9 +15,13 @@
   <div class="header__search">
     <app-search></app-search>
   </div>
-  <app-basket ></app-basket>
-  <app-popup ></app-popup>
-  <div  [routerLink]="['/user-profile']" class="header__login">
-    <app-login></app-login>
+  <app-basket></app-basket>
+  <app-popup></app-popup>
+
+  <div *ngIf="!authorization" class="header__login">
+    <app-log-in [routerLink]="['/registration']"></app-log-in>
+  </div>
+  <div *ngIf="authorization " class="header__login">
+    <app-login [routerLink]="['/user-profile']"></app-login>
   </div>
 </header>
