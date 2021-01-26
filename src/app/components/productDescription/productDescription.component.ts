@@ -12,18 +12,18 @@ import {products} from '../../mocks/product.mocks';
 })
 
 
-export class ProductDescriptionComponent implements OnInit{
+export class ProductDescriptionComponent implements OnInit {
   id: number;
   product: Product;
-  name: Params;
+
   constructor(private route: ActivatedRoute) {
   }
-  ngOnInit(): void{
-    this.route.queryParams.subscribe(params => {
-      this.name = params.productId;
-      console.log(this.name);
+
+  ngOnInit(): void {
+    this.route.params.subscribe(params => {
+      this.id = params.productId;
     });
-     // this.product = products[this.id];
+    this.product = products[this.id];
   }
 }
 
