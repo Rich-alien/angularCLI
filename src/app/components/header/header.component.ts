@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -7,7 +7,7 @@ import {Component, Input} from '@angular/core';
 
 })
 export class HeaderComponent  {
-  @Input() authorization;
+  authorization;
   public getUserStatus(status: boolean): void{
     localStorage.setItem('loggedIn', status.toString());
     this.authorization = status;
