@@ -6,10 +6,10 @@ import {Injectable} from '@angular/core';
 export class UserService {
   constructor() {
   }
-  setUserStatus(status: string): void{
-    localStorage.setItem('loggedIn', status);
-  }
-  getUserStatus(): string{
-    return localStorage.getItem('loggedIn');
-  }
+  // setUserStatus(status: string): void{
+  //   localStorage.setItem('loggedIn', status);
+  // }
+  // getUserStatus(): string{
+  //   return localStorage.getItem('loggedIn');
+  // }
 }

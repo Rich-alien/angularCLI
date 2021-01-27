@@ -1,5 +1,4 @@
-import {Component} from '@angular/core';
-import {UserService} from '../../../service/user.service';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 
 
 @Component({
@@ -9,11 +8,12 @@ import {UserService} from '../../../service/user.service';
 
 })
 
-export class RegistrationComponent{
-  constructor(private userService: UserService) {
+export class RegistrationComponent implements OnInit{
+  @Output() wasRegistration: EventEmitter<boolean> = new EventEmitter<boolean>();
+  public updateStatus(status: boolean): void {
+    this.wasRegistration.emit(status);
   }
-  public updateStatus(status: string): void {
-    this.userService.setUserStatus(status);
-    }
+  ngOnInit(): void {
+  }
 }
 

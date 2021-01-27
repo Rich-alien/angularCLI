@@ -18,10 +18,10 @@
   <app-basket></app-basket>
   <app-popup></app-popup>
 
-  <div *ngIf="!chekStatus()" class="header__login">
-    <app-log-in [routerLink]="['/registration']"></app-log-in>
+  <div *ngIf="!authorization" class="header__login">
+    <app-log-in (wasRegistration)="getUserStatus($event)" [routerLink]="['/registration']"></app-log-in>
   </div>
-  <div *ngIf="chekStatus()" class="header__login">
+  <div *ngIf="authorization" class="header__login">
     <app-login [routerLink]="['/user-profile']"></app-login>
   </div>
 </header>

@@ -1,5 +1,4 @@
 import {Component, Input} from '@angular/core';
-import {UserService} from '../../../service/user.service';
 
 @Component({
   selector: 'app-header',
@@ -9,13 +8,8 @@ import {UserService} from '../../../service/user.service';
 })
 export class HeaderComponent  {
   @Input() authorization;
-  constructor(private userService: UserService) {
-  }
-  chekStatus(): boolean {
-      let wasPressedReg = false;
-      if (this.userService.getUserStatus() === 'true') {
-        wasPressedReg = true;
-      }
-      return wasPressedReg;
+  public getUserStatus(status: boolean): void{
+    localStorage.setItem('loggedIn', status.toString());
+    this.authorization = status;
   }
 }
