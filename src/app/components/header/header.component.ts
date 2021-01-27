@@ -1,4 +1,5 @@
-import {Component} from '@angular/core';
+import {Component, Input} from '@angular/core';
+import {UserService} from '../../../service/user.service';
 
 @Component({
   selector: 'app-header',
@@ -6,10 +7,15 @@ import {Component} from '@angular/core';
   styleUrls: ['./header.component.less'],
 
 })
-export class HeaderComponent {
-  authorization: string = localStorage.getItem('loggedIn');
-
-  click(): void {
-    console.log(this.authorization);
+export class HeaderComponent  {
+  @Input() authorization;
+  constructor(private userService: UserService) {
+  }
+  chekStatus(): boolean {
+      let wasPressedReg = false;
+      if (this.userService.getUserStatus() === 'true') {
+        wasPressedReg = true;
+      }
+      return wasPressedReg;
   }
 }

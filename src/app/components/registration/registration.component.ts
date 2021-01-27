@@ -1,4 +1,5 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
+import {UserService} from '../../../service/user.service';
 
 
 @Component({
@@ -8,15 +9,11 @@ import {Component, OnInit} from '@angular/core';
 
 })
 
-
-export class RegistrationComponent implements OnInit{
-  constructor() {
+export class RegistrationComponent{
+  constructor(private userService: UserService) {
   }
-  ngOnInit(): void {
-    //
-  }
-  reg(): void{
-    localStorage.setItem('loggedIn', String(true));
-  }
+  public updateStatus(status: string): void {
+    this.userService.setUserStatus(status);
+    }
 }
 

@@ -21,6 +21,7 @@ import {AppRoutingModule} from './app-routing.module';
 import {CommonModule} from '@angular/common';
 import {FormsModule} from '@angular/forms';
 import {RegistrationComponent} from './components/registration/registration.component';
+import {UserService} from '../service/user.service';
 
 @NgModule({
     declarations: [
@@ -47,7 +48,7 @@ import {RegistrationComponent} from './components/registration/registration.comp
     FormsModule,
     AppRoutingModule
   ],
-  providers: [ProductsService, CartService],
+  providers: [ProductsService, CartService, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
