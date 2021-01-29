@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
-import {products} from '../app/mocks/product.mocks';
 import {Product} from '../app/model/product.model';
+import {ProductsService} from './products.service';
+import {Observable} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -8,18 +9,17 @@ import {Product} from '../app/model/product.model';
 export class CartService {
   cart: Product[] = [];
   cartCount = 0;
-
-  constructor() {
+  products: Observable<Product[]> = this.productService.getProducts();
+  constructor(private productService: ProductsService) {
   }
-
   setCartInstance = (id: number) => {
     if (this.cartCount === 0) {
       this.cartCount++;
-      this.cart.push(products[id]);
+      this.cart.push(this.products[id]);
     } else {
       if (this.hasCollision(id)) {
         this.cartCount++;
-        this.cart.push(products[id]);
+        this.cart.push(this.products[id]);
       } else {
         this.cart.forEach(item => {
           if (item.id === id) {
