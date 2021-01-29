@@ -22,7 +22,7 @@ import {CommonModule} from '@angular/common';
 import {FormsModule} from '@angular/forms';
 import {RegistrationComponent} from './components/registration/registration.component';
 import {UserService} from '../service/user.service';
-
+import {HttpClientModule} from '@angular/common/http';
 @NgModule({
     declarations: [
         AppComponent,
@@ -43,6 +43,7 @@ import {UserService} from '../service/user.service';
         RegistrationComponent
     ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     CommonModule,
     FormsModule,
