@@ -1,11 +1,13 @@
 <div class="product-list">
-    <div  class="product-card">
-      <div class="product-card__info">
-        <div class="product-card__info-name">name <p class="product-card__name">{{product.name}}</p></div>
-        <div class="product-card__info-description">description<p
-          class="product-card__description">{{product.description}}</p></div>
-        <div class="product-card__info-price">price <p class="product-card__price">{{product.price}}$</p></div>
+  <div class="product-card">
+    <div class="product-card__info" *ngFor="let product of productDescription$ |async">
+      <div class="product-card__info-name">name <p class="product-card__name">{{product.name}}</p>
       </div>
+      <div class="product-card__info-description">description<p
+        class="product-card__description">{{product.description}}</p></div>
+      <div class="product-card__info-price">price <p class="product-card__price">{{product.price }}
+        $</p></div>
     </div>
+  </div>
 
 </div>

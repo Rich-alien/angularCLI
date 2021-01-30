@@ -25,7 +25,6 @@ export class ProductsService {
         delay(1000),
         take(1),
         map(([products]: [Product[]]) =>
-          // добавлен фильтр, что если продукта нет , то он не будет появляться.
           products.filter(p => p.count > 0)),
         tap(() => this.loading$.next(false))
       );
@@ -35,19 +34,21 @@ export class ProductsService {
     this.loading$.next(true);
     return combineLatest([this.getProducts(), this.selectedID$])
       .pipe(
-        delay(1000),
+        // delay(1000),
         take(1),
         map(([products, id]: [Product[], number]) =>
-          products.filter(p => p.id === id)),
+          products.filter(p => id === p.id)),
         tap(() => this.loading$.next(false))
       );
+  }
 
+  public isLoading(): Observable<boolean> {
+    return this.loading$.asObservable();
   }
 
   // getCurrentIdProduct(): Observable<number> {
   //   return this.selectedID$;
   // }
-
   setCurrentIdProduct(value: number): void {
     this.selectedID$.next(value);
   }
