@@ -1,9 +1,9 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {ActivatedRoute, Params} from '@angular/router';
+import {ActivatedRoute} from '@angular/router';
 import {Product} from '../../model/product.model';
-import {BehaviorSubject, Observable, ReplaySubject, Subject} from 'rxjs';
+import { Subject, Subscription} from 'rxjs';
 import {ProductsService} from '../../../service/products.service';
-import {takeUntil} from 'rxjs/operators';
+
 
 
 @Component({
@@ -15,26 +15,23 @@ import {takeUntil} from 'rxjs/operators';
 
 
 export class ProductDescriptionComponent implements OnInit, OnDestroy {
+  id: number;
   private unsubscribe$: Subject<void> = new Subject();
-  public productDescription$: Subject<Product[]> = new ReplaySubject();
-  public loader$: Observable<boolean> = new BehaviorSubject<boolean>(false);
+  private routeSub: Subscription;
 
   constructor(private route: ActivatedRoute, private productsService: ProductsService) {
   }
 
-  products: Observable<Product[]> = this.productsService.getProducts();
+  productDescription: Product;
 
   ngOnInit(): void {
-    this.loader$ = this.productsService.isLoading();
-    this.route.params
-      .pipe(takeUntil(this.unsubscribe$))
-      .subscribe((params: Params) => {
-        this.productsService.setCurrentIdProduct(params.productId);
-        this.productsService.getProductDescription()
-          .pipe(takeUntil(this.unsubscribe$))
-          .subscribe(product => this.productDescription$.next(product));
+    this.routeSub = this.route.params.subscribe(params => {
+      this.id = params.productId;
+      this.productsService.getProducts().subscribe((products: Product[]) => {
+        this.productDescription = products[this.id];
       });
- }
+    });
+  }
 
   ngOnDestroy(): void {
     this.unsubscribe$.next();
