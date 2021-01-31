@@ -1,12 +1,9 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ProductsService} from '../../../service/products.service';
 import {Product} from '../../model/product.model';
 import {CartService} from '../../../service/cart.service';
-import {ReplaySubject, Subject} from 'rxjs';
-import {takeUntil} from 'rxjs/operators';
-import {ActivatedRoute} from '@angular/router';
 
-// [routerLink]="['/products', category]"
+
 @Component({
   selector: 'app-product',
   templateUrl: './product.component.html',
@@ -15,37 +12,21 @@ import {ActivatedRoute} from '@angular/router';
 })
 
 
-export class ProductComponent implements OnInit, OnDestroy {
-  cart = new Map();
-  // productList: Product[];
-  public productList$: Subject<Product[]> = new ReplaySubject();
-  private unsubscribe$: Subject<void> = new Subject();
+export class ProductComponent implements OnInit {
 
-  constructor(private productService: ProductsService, private cartServices: CartService, private route: ActivatedRoute) {
+  productList: Product[];
+  constructor(private productService: ProductsService, private cartServices: CartService) {
   }
 
   public addToCart(id: number): void {
     this.cartServices.setCartInstance(id);
   }
 
-  // ngOnInit(): void {
-  //   this.productService.getProducts().subscribe((products: Product[]) => {
-  //     this.productList = products;
-  //   });
-  // }
   ngOnInit(): void {
-    // this.loader$ = this.productService.isLoading();
-    this.route.params
-      .pipe(takeUntil(this.unsubscribe$))
-      .subscribe(() => {
-        this.productService.getProductsWithoutEmpty()
-          .pipe(takeUntil(this.unsubscribe$))
-          .subscribe(products => this.productList$.next(products));
-      });
+    this.productService.getProducts().subscribe((products: Product[]) => {
+      this.productList = products;
+    });
   }
 
-  ngOnDestroy(): void {
-    this.unsubscribe$.next();
-  }
 }
 
