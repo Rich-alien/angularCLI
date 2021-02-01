@@ -16,11 +16,11 @@ export class CartService {
   setCartInstance = (id: number) => {
     if (this.cartCount === 0) {
       this.cartCount++;
-      this.getProduct(id);
+      this.addProductToCart(id);
     } else {
       if (this.hasCollision(id)) {
         this.cartCount++;
-        this.getProduct(id);
+        this.addProductToCart(id);
       } else {
         this.cart.forEach(item => {
           if (item.id === id) {
@@ -31,7 +31,7 @@ export class CartService {
     }
   }
 
-  getProduct(id: number): void {
+  addProductToCart(id: number): void {
     this.productService.getProducts().subscribe((products: Product[]) => {
       this.cart.push(products[id]);
     });
