@@ -23,6 +23,7 @@ import {FormsModule} from '@angular/forms';
 import {RegistrationComponent} from './components/registration/registration.component';
 import {UserService} from '../service/user.service';
 import {HttpClientModule} from '@angular/common/http';
+import {AddProductComponent} from './components/admin/add-product/add-product.component';
 @NgModule({
     declarations: [
         AppComponent,
@@ -40,7 +41,8 @@ import {HttpClientModule} from '@angular/common/http';
         UserProfileComponent,
         ProductDescriptionComponent,
         PageNotFoundComponent,
-        RegistrationComponent
+        RegistrationComponent,
+        AddProductComponent
     ],
   imports: [
     HttpClientModule,
