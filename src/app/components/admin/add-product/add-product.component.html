@@ -1,0 +1,41 @@
+<div>
+  <!--  Все поля должны быть обязательными для заполнения.-->
+  <form class="form">
+    <!--   Имя: не менее 3-х символов и не более 200 Валидацию включить!-->
+    <div class="field">
+      <label>Product name</label>
+      <input
+        #name="ngModel"
+        [(ngModel)]="product.name"
+        minlength="3"
+        maxlength="200"
+        name="product-name"
+        placeholder="Product name"
+        required
+        type="text"
+      >
+      <!--      <div *ngIf="name.errors?.minlength">name product must be at least 3 characters long</div>-->
+      <!--      <div *ngIf="name.errors?.maxlength">name product must be at least 3 characters long</div>-->
+    </div>
+    <!--    Цена: должна быть числом больше 0. Валидацию включить! -->
+    <div class="field">
+      <label>count</label>
+      <input
+        min=0
+        required
+        type="number" name="count" placeholder="Count">
+    </div>
+    <div class="field">
+      <label>price</label>
+      <input
+        min=0
+        required
+        type="number" name="price" placeholder="Price">
+    </div>
+    <!--    <div class="field">-->
+    <!--      <label >Email</label>-->
+    <!--      <input type="email" name="email" placeholder="Email">-->
+    <!--    </div>-->
+    <button class="button" type="submit">Submit</button>
+  </form>
+</div>
