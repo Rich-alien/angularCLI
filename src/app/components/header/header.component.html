@@ -24,4 +24,11 @@
   <div *ngIf="authorization" class="header__login">
     <app-login [routerLink]="['/user-profile']"></app-login>
   </div>
+  <div *ngIf="authorization" class="header__login">
+    <div [routerLink]="['/add-product']" class="add-product">
+      <div  class="open__button">
+        add product
+      </div>
+    </div>
+  </div>
 </header>
